@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Millions with TGR: Start with ₦2,500!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Or use a newer Font Awesome kit -->
+    <style>
+        :root {
+            --primary-color: #0a192f; /* Deep Navy Blue */
+            --secondary-color: #64ffda; /* Bright Teal/Aqua */
+            --accent-color: #ffd700; /* Gold */
+            --light-color: #ccd6f6; /* Light Blue/Grey */
+            --dark-grey: #8892b0; /* Darker Grey */
+            --white: #ffffff;
+            --bg-gradient: linear-gradient(135deg, #0a192f 0%, #172a45 100%); /* Subtle gradient */
+            --card-bg: rgba(23, 42, 69, 0.8); /* Semi-transparent card background */
+            --success-green: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--light-color);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            padding-top: 80px; /* Add padding to prevent content overlap with fixed header if added */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            overflow: hidden; /* Contains floats/margins */
+        }
+
+        /* --- Header/Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80') no-repeat center center/cover; /* Replace with a relevant, high-quality background */
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden; /* For pseudo-element */
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .hero::before { /* Subtle overlay pattern */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .hero h1, .hero p {
+            position: relative; /* Ensure text is above overlay */
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--accent-color); /* Gold highlight */
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--light-color);
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+             background-color: rgba(23, 42, 69, 0.3); /* Slightly different background for rhythm */
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after { /* Underline effect */
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--dark-grey);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- Package Section --- */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .package-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+        }
+
+        .package-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .package-card .icon.diamond { color: var(--white); } /* Adjust icon colors */
+        .package-card .icon.pearl { color: var(--accent-color); }
+
+        .package-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .package-card .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .package-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .package-card li {
+            margin-bottom: 0.5rem;
+            color: var(--light-color);
+            font-size: 0.95rem;
+        }
+
+        .package-card .highlight {
+             color: var(--secondary-color);
+             font-weight: 600;
+        }
+         .package-card .caveat {
+             color: var(--dark-grey);
+             font-style: italic;
+             font-size: 0.9rem;
+         }
+
+        /* --- How It Works / Levels Section --- */
+        .levels-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .level-step {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            border-left: 5px solid var(--secondary-color);
+            transition: box-shadow 0.3s ease;
+        }
+
+         .level-step:hover {
+             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+         }
+
+        .level-step .level-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            min-width: 50px; /* Ensure icon area has width */
+            text-align: center;
+        }
+        .level-step .level-icon i { /* Example using Font Awesome */
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .level-content h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .level-content p {
+            margin-bottom: 0.8rem;
+            color: var(--light-color);
+        }
+
+        .level-content .calculation {
+            background-color: rgba(10, 25, 47, 0.7); /* Slightly darker background */
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .level-content .calculation span {
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .level-content .what-next {
+            font-weight: 600;
+            color: var(--white);
+            margin-top: 1rem;
+        }
+
+        .level-content .what-next span {
+            color: var(--success-green); /* Green for positive outcome */
+            font-weight: 700;
+        }
+
+        /* Style for Level 2 upgrade calculation */
+        .level-upgrade-calc {
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed var(--dark-grey);
+            font-size: 1rem;
+        }
+        .level-upgrade-calc p {
+             margin-bottom: 0.5rem;
+        }
+
+        /* --- Exponential Growth Section --- */
+        .growth-section {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover; /* Network/Growth Background */
+            padding: 5rem 0;
+        }
+
+        .growth-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .growth-item {
+            background: rgba(255, 255, 255, 0.05); /* Very subtle background */
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 255, 218, 0.15);
+            transition: background-color 0.3s ease;
+        }
+
+        .growth-item:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        .growth-item h4 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .growth-item p {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+        .growth-item .detail {
+            font-size: 0.9rem;
+            color: var(--dark-grey);
+        }
+
+        /* --- Final Potential / Summary Section --- */
+        .summary-section {
+            text-align: center;
+        }
+        .summary-section .total-potential {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin: 1.5rem 0;
+            display: block;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        .summary-section .daily-potential {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+        .summary-section .conclusion-text {
+            font-size: 1.2rem;
+            color: var(--light-color);
+            max-width: 800px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* --- Call to Action (Footer) --- */
+        footer {
+            background: var(--primary-color);
+            padding: 4rem 0;
+            text-align: center;
+            border-top: 3px solid var(--secondary-color);
+             margin-top: 3rem;
+        }
+
+        footer h2 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--secondary-color), #36D1DC); /* Aqua to Blue gradient */
+            color: var(--primary-color);
+            padding: 1rem 2.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+        }
+
+        .cta-button i { /* WhatsApp Icon */
+            margin-right: 10px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(100, 255, 218, 0.6);
+        }
+
+        /* --- Utilities & Responsive --- */
+        .text-accent { color: var(--accent-color); }
+        .text-secondary { color: var(--secondary-color); }
+        .text-success { color: var(--success-green); }
+        .font-bold { font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .section-title { font-size: 2rem; }
+            .packages-grid { grid-template-columns: 1fr; }
+            .level-step { flex-direction: column; text-align: center; gap: 1rem; align-items: center; }
+            .level-step .level-icon { margin-bottom: 1rem; }
+            .growth-grid { grid-template-columns: 1fr; }
+            .summary-section .total-potential { font-size: 2.8rem; }
+            .summary-section .daily-potential { font-size: 1.5rem; }
+            footer h2 { font-size: 1.8rem; }
+            .cta-button { font-size: 1.1rem; padding: 0.8rem 2rem; }
+            body { padding-top: 60px; /* Adjust if needed */}
+        }
+
+         @media (max-width: 480px) {
+             .hero h1 { font-size: 2rem; }
+             .hero .subtitle { font-size: 1rem; }
+             .section-title { font-size: 1.8rem; }
+             .level-content h3 { font-size: 1.4rem; }
+             .level-content .calculation { font-size: 1rem; }
+             .summary-section .total-potential { font-size: 2.2rem; }
+             .summary-section .daily-potential { font-size: 1.3rem; }
+             .container { padding: 0 15px; }
+         }
+
+         /* Subtle Animations (Optional) */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section > .container > *:not(.section-title):not(.section-subtitle) {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+
+        /* Stagger animation for lists/grids */
+        .packages-grid .package-card,
+        .levels-container .level-step,
+        .growth-grid .growth-item {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Apply delays */
+        .packages-grid .package-card:nth-child(1), .levels-container .level-step:nth-child(1), .growth-grid .growth-item:nth-child(1) { animation-delay: 0.2s; }
+        .packages-grid .package-card:nth-child(2), .levels-container .level-step:nth-child(2), .growth-grid .growth-item:nth-child(2) { animation-delay: 0.4s; }
+        .packages-grid .package-card:nth-child(3), .levels-container .level-step:nth-child(3), .growth-grid .growth-item:nth-child(3) { animation-delay: 0.6s; }
+        /* Add more delays if needed */
+        .levels-container .level-step:nth-child(4), .growth-grid .growth-item:nth-child(4) { animation-delay: 0.8s; }
+        .levels-container .level-step:nth-child(5), .growth-grid .growth-item:nth-child(5) { animation-delay: 1.0s; }
+        .growth-grid .growth-item:nth-child(6) { animation-delay: 1.2s; }
+        .growth-grid .growth-item:nth-child(7) { animation-delay: 1.4s; }
+
+
+    </style>
+    <!-- Add Font Awesome CDN Link if you haven't already -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>How to Make <span>Millions</span> Even with the ₦2,500 Pearl Mini Package!</h1>
+            <p class="subtitle">Discover the power of TGR's 'Fantastic 5' Plan. Start small, build your team, upgrade strategically, and unlock massive earning potential. Your journey to financial freedom starts NOW!</p>
+            <!-- Optional: A subtle down arrow or scroll indicator -->
+        </div>
+    </header>
+
+    <main>
+        <!-- Introduction / Premise -->
+        <section id="intro">
+            <div class="container">
+                <h2 class="section-title">Your Pathway to Wealth</h2>
+                <p class="section-subtitle">Imagine wanting financial success but starting with limited funds. With TGR (Top-Up and Get Reward), that's not a barrier! Even a small ₦2,500 start, combined with the 'Fantastic 5' team strategy, can pave the way to significant riches. Let's show you exactly how.</p>
+            </div>
+        </section>
+
+        <!-- TGR Packages -->
+        <section id="packages">
+            <div class="container">
+                <h2 class="section-title">Choose Your Starting Point</h2>
+                <p class="section-subtitle">TGR offers various packages, but the magic begins even with the most accessible one. Remember, the key is to upgrade as you grow!</p>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="icon pearl"><i class="fas fa-seedling"></i></div> <!-- Changed Icon -->
+                        <h3>Pearl Mini</h3>
+                        <p class="price">₦2,500</p>
+                        <ul>
+                            <li>Start small & focused</li>
+                            <li>Earn commissions from <span class="highlight">2 Levels</span></li>
+                            <li class="caveat">No Point Values until upgrade (to ₦10k+)</li>
+                        </ul>
+                    </div>
+                    <div class="package-card">
+                         <div class="icon diamond"><i class="far fa-gem"></i></div>
+                        <h3>Diamond</h3>
+                        <p class="price">₦50,000</p>
+                         <ul>
+                             <li>Significant earning boost</li>
+                             <li>Earn commissions from <span class="highlight">10 Levels</span></li>
+                             <li>Point Values up to <span class="highlight">5 Levels</span></li>
+                         </ul>
+                    </div>
+                    <div class="package-card">
+                        <div class="icon diamond"><i class="fas fa-gem"></i></div> <!-- Changed Icon -->
+                        <h3>Executive Diamond</h3>
+                        <p class="price">₦100,000</p>
+                        <ul>
+                            <li>Maximize your potential</li>
+                            <li>Earn commissions from <span class="highlight">10 Levels</span></li>
+                             <li>Point Values up to <span class="highlight">5 Levels</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Strategy: Start Small, Upgrade! -->
+        <section id="strategy">
+            <div class="container">
+                <h2 class="section-title">The Millionaire Secret: Upgrade!</h2>
+                <p class="section-subtitle">The path from ₦2,500 to millions lies in <span class="text-secondary font-bold">strategic upgrades</span>. Start with Pearl Mini, recruit your 'Fantastic 5', earn commissions, and reinvest smartly into higher packages (like Diamond or Executive Diamond) to unlock deeper commission levels and exponential growth.</p>
+            </div>
+        </section>
+
+        <!-- Level-by-Level Breakdown -->
+        <section id="levels">
+            <div class="container">
+                 <h2 class="section-title">Your Growth Blueprint: Step-by-Step</h2>
+                 <p class="section-subtitle">Follow the 'Fantastic 5' plan: You bring 5, who each bring 5, and so on. See how your earnings multiply at each stage, fuelling your upgrades.</p>
+                 <div class="levels-container">
+
+                    <!-- Level 1 -->
+                    <div class="level-step">
+                        <div class="level-icon"><i class="fas fa-users"></i></div>
+                        <div class="level-content">
+                            <h3>Level 1: Your Core Team</h3>
+                            <p>You recruit 5 serious friends who register with ₦2,500 each.</p>
+                            <div class="calculation">
+                                Your Earnings: <span>₦522.50</span> × 5 friends = <span class="text-accent font-bold">₦2,612.50</span>
+                            </div>
+                            <p class="what-next">What Next? You've earned back your start-up! Upgrade to the ₦5,000 Pearl Package & have <span class="text-success">₦112.50</span> left for airtime!</p>
+                        </div>
+                    </div>
+
+                    <!-- Level 2 -->
+                    <div class="level-step">
+                        <div class="level-icon"><i class="fas fa-layer-group"></i></div>
+                        <div class="level-content">
+                            <h3>Level 2: Team Expansion</h3>
+                            <p>Your 5 friends each bring 5 new members (25 people on this level).</p>
+                            <div class="calculation">
+                                Your Earnings (from Level 2 signups): <span>₦118.75</span> × 25 people = <span class="text-accent font-bold">₦2,968.75</span>
+                            </div>
+                            <div class="level-upgrade-calc">
+                                <p>PLUS: Your 5 direct friends upgrade to ₦5,000!</p>
+                                <p>Upgrade Commission: <span>₦522.50</span> × 5 friends = <span class="text-accent font-bold">₦2,612.50</span></p>
+                            </div>
+                            <p class="what-next">Total Accumulated: ₦2,968.75 + ₦2,612.50 = <span>₦5,581.25</span>. Upgrade to ₦10,000 Coral Package & have <span class="text-success">₦581.25</span> left!</p>
+                        </div>
+                    </div>
+
+                    <!-- Level 3 -->
+                    <div class="level-step">
+                        <div class="level-icon"><i class="fas fa-sitemap"></i></div>
+                        <div class="level-content">
+                            <h3>Level 3: Growing Deeper</h3>
+                            <p>Your 25 Level 2 members each bring 5 (125 people on this level).</p>
+                             <div class="calculation">
+                                Your Earnings: <span>₦118.75</span> × 125 people = <span class="text-accent font-bold">₦14,843.75</span>
+                            </div>
+                            <p class="what-next">What Next? Now you can upgrade to the ₦20,000 Package & keep <span class="text-success">₦4,843.75</span>!</p>
+                            </div>
+                    </div>
+
+                    <!-- Level 4 -->
+                     <div class="level-step">
+                        <div class="level-icon"><i class="fas fa-network-wired"></i></div>
+                        <div class="level-content">
+                            <h3>Level 4: Significant Momentum</h3>
+                             <p>The 125 people from Level 3 each bring 5 (625 people on this level).</p>
+                             <div class="calculation">
+                                Your Earnings: <span>₦59.38</span> × 625 people = <span class="text-accent font-bold">₦37,109.38</span>
+                            </div>
+                             <p class="what-next">Boom! Upgrade to the powerful ₦50,000 Diamond Package & pocket <span class="text-success">₦7,109.38</span>!</p>
+                        </div>
+                    </div>
+
+                 </div>
+            </div>
+        </section>
+
+        <!-- Exponential Growth -->
+        <section id="growth" class="growth-section">
+            <div class="container">
+                <h2 class="section-title">The Power of Exponential Growth</h2>
+                <p class="section-subtitle">Once you're on the Diamond package (or higher), your earnings potential explodes as your team grows deeper. Here's a glimpse of what's possible from registration commissions alone:</p>
+                <div class="growth-grid">
+                    <div class="growth-item">
+                        <h4>Level 5</h4>
+                        <p>₦111,343.75</p>
+                        <span class="detail">3,125 People</span>
+                    </div>
+                    <div class="growth-item">
+                        <h4>Level 6</h4>
+                        <p>₦556,718.75</p>
+                        <span class="detail">15,625 People</span>
+                    </div>
+                    <div class="growth-item">
+                        <h4>Level 7</h4>
+                        <p>₦2,783,593.75</p>
+                        <span class="detail">78,125 People</span>
+                    </div>
+                    <div class="growth-item">
+                        <h4>Level 8</h4>
+                        <p>₦13,917,968.75</p>
+                         <span class="detail">390,625 People</span>
+                    </div>
+                    <div class="growth-item">
+                        <h4>Level 9</h4>
+                        <p>₦69,589,843.75</p>
+                        <span class="detail">1,953,125 People</span>
+                    </div>
+                    <div class="growth-item">
+                        <h4>Level 10</h4>
+                        <p>₦347,949,218.75</p>
+                        <span class="detail">9,765,625 People</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary & Conclusion -->
+        <section id="summary" class="summary-section">
+            <div class="container">
+                <h2 class="section-title">Your Incredible Potential</h2>
+                <p class="section-subtitle">Adding up the registration commissions across all 10 levels...</p>
+                <p>Total Potential Earnings:</p>
+                <span class="total-potential">Over ₦434 Million!</span>
+                <p class="daily-potential">And that's just sign-ups! Imagine earning daily from airtime/data purchases – potentially <span class="text-secondary font-bold">over ₦1 Million DAILY</span> if just 10% of your vast team recharges!</p>
+                <p class="conclusion-text">This isn't a get-rich-quick scheme, but a proven plan. It shows that starting capital isn't the barrier – <span class="text-accent">teamwork, dedication, and strategic upgrades</span> are your keys to unlocking millions. Start small, dream big, and grow together!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer CTA -->
+    <footer>
+        <div class="container">
+            <h2>Ready to Start Your Journey to Millions?</h2>
+            <p style="color: var(--light-color); margin-bottom: 2rem;">Take the first step! Click below to chat directly and learn how to join the TGR Fantastic 5 plan today.</p>
+            <a href="https://wa.link/48r7v9" class="cta-button" target="_blank" title="WhatsApp Dammie Optimus about Pearl Mini Fantastic 5">
+                <i class="fab fa-whatsapp"></i> Chat with Dammie Optimus Now!
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
