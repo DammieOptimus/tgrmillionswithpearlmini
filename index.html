@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlock Millions with TGR: Start with ₦2,500!</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Or use a newer Font Awesome kit -->
+    <!-- Use a modern Font Awesome kit for better icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         :root {
             --primary-color: #0a192f; /* Deep Navy Blue */
@@ -379,8 +380,10 @@
             box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
         }
 
-        .cta-button i { /* WhatsApp Icon */
+        .cta-button i { /* Icon style */
             margin-right: 10px;
+            font-size: 1.1em; /* Slightly larger icon */
+            vertical-align: middle; /* Align icon better with text */
         }
 
         .cta-button:hover {
@@ -451,8 +454,7 @@
 
 
     </style>
-    <!-- Add Font Awesome CDN Link if you haven't already -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Removed old Font Awesome script -->
 </head>
 <body>
 
@@ -646,13 +648,41 @@
     <!-- Footer CTA -->
     <footer>
         <div class="container">
-            <h2>Ready to Start Your Journey to Millions?</h2>
-            <p style="color: var(--light-color); margin-bottom: 2rem;">Take the first step! Click below to chat directly and learn how to join the TGR Fantastic 5 plan today.</p>
-            <a href="https://wa.link/48r7v9" class="cta-button" target="_blank" title="WhatsApp Dammie Optimus about Pearl Mini Fantastic 5">
-                <i class="fab fa-whatsapp"></i> Chat with Dammie Optimus Now!
+            <!-- Changed H2 and P content -->
+            <h2>Ready to Build Your TGR Empire?</h2>
+            <p style="color: var(--light-color); margin-bottom: 2rem;">Your path to financial growth with TGR starts here. Click below to register and begin your journey following the Fantastic 5 plan!</p>
+            <!-- Updated the link: Added id, changed href, text, icon, title -->
+            <a href="https://www.topupandgetreward.com/register?referralid=" class="cta-button" id="referralButton" target="_blank" title="Register for TopUpAndGetReward">
+                <i class="fas fa-rocket"></i> Start Your TGR Journey Now!
             </a>
         </div>
     </footer>
+
+    <!-- JavaScript to handle dynamic referral ID -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Base URL for the referral link
+            const baseUrl = 'https://www.topupandgetreward.com/register?referralid=';
+
+            // Get the button element
+            const referralButton = document.getElementById('referralButton');
+
+            // Get URL query parameters
+            const params = new URLSearchParams(window.location.search);
+
+            // Check if a 'ref' parameter exists in the URL (e.g., yourpage.html?ref=YOUR_ID)
+            const referralId = params.get('ref'); // Using 'ref' as the parameter name
+
+            if (referralId && referralButton) {
+                // If the referral ID exists, append it to the base URL and update the button's href
+                referralButton.href = baseUrl + encodeURIComponent(referralId); // Ensure ID is URL-safe
+                console.log('Referral link updated to:', referralButton.href);
+            } else if (referralButton) {
+                // Optional: Log if no referral ID was found but the button exists
+                console.log('No referral ID found in URL parameter "ref". Button links to base registration page.');
+            }
+        });
+    </script>
 
 </body>
 </html>
