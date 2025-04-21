@@ -42,6 +42,20 @@
             overflow: hidden; /* Contains floats/margins */
         }
 
+        /* --- Logo Section --- */
+        .logo-container {
+            padding: 20px 0; /* Adds space above and below the logo */
+            text-align: center; /* Centers the image within the container */
+            background-color: var(--primary-color); /* Optional: Match header background or remove for body gradient */
+        }
+        
+        .company-logo {
+            max-height: 60px; /* Adjust height as needed - controls the logo size */
+            width: auto;     /* Maintains the aspect ratio */
+            display: inline-block; /* Helps with alignment */
+        }
+
+
         /* --- Header/Hero Section --- */
         .hero {
             background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.95)), url('https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80') no-repeat center center/cover; /* Replace with a relevant, high-quality background */
@@ -92,6 +106,8 @@
             font-size: 1.3rem;
             color: var(--light-color);
             max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
             margin-bottom: 1.5rem;
             font-weight: 300;
         }
@@ -457,7 +473,11 @@
     <!-- Removed old Font Awesome script -->
 </head>
 <body>
-
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <img src="https://www.topupandgetreward.com/images/logo.png" alt="TopUpAndGetReward Logo" class="company-logo">
+    </div>
+    
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
