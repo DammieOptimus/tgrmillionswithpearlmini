@@ -394,6 +394,7 @@
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(100, 255, 218, 0.4);
+            margin-bottom: 1.5rem;
         }
 
         .cta-button i { /* Icon style */
@@ -405,6 +406,33 @@
         .cta-button:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 25px rgba(100, 255, 218, 0.6);
+        }
+
+        /* --- Video Guide Button --- */
+        .video-guide-button {
+            display: inline-block; /* Allows centering via text-align on parent */
+            background-color: transparent; /* Transparent background */
+            border: 2px solid var(--dark-grey); /* Use a less prominent border color */
+            color: var(--dark-grey); /* Match text color to border */
+            padding: 0.6rem 1.5rem; /* Smaller padding than main CTA */
+            font-size: 1rem; /* Smaller font size */
+            font-weight: 500; /* Normal weight */
+            border-radius: 50px; /* Pill shape */
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            margin-bottom: 1.5rem; /* Add space below this button, before the main CTA */
+            cursor: pointer; /* Indicate it's clickable */
+        }
+        
+        .video-guide-button i {
+            margin-right: 8px; /* Space between icon and text */
+            vertical-align: middle; /* Align icon */
+        }
+        
+        .video-guide-button:hover {
+            background-color: var(--dark-grey); /* Fill with border color on hover */
+            color: var(--white); /* Change text to white for contrast */
+            border-color: var(--dark-grey); /* Keep border color consistent on hover */
         }
 
         /* --- Utilities & Responsive --- */
@@ -674,6 +702,12 @@
             <!-- Updated the link: Added id, changed href, text, icon, title -->
             <a href="https://www.topupandgetreward.com/register?referralid=DammieOptimus2" class="cta-button" id="referralButton" target="_blank" title="Register for TopUpAndGetReward">
                 <i class="fas fa-rocket"></i> Start Your TGR Journey Now!
+            </a>
+
+            <br />
+
+            <a href="https://www.youtube.com/watch?v=4zTEeEyGrY4" class="video-guide-button" target="_blank" title="Watch How to Pay for Registration">
+                <i class="fas fa-play-circle"></i> Watch: How to Pay for Registration
             </a>
         </div>
     </footer>
